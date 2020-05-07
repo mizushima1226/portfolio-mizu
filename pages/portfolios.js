@@ -33,7 +33,7 @@ class Portfolio extends React.Component {
 		return (
 			<BaseLayout>
 				<h1>I am Portfolio Page!</h1>
-				<ul>{this.renderPosts(posts)}</ul>
+				<ul>{this.renderPosts(posts || [])}</ul>
 			</BaseLayout>
 		);
 	}
