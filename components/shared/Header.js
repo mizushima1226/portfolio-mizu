@@ -9,6 +9,8 @@ import {
 	NavItem
 } from 'reactstrap';
 
+import auth0 from '../../services/auth0';
+
 const BsNavLink = props => {
 	const { route, title } = props;
 	return (
@@ -16,6 +18,18 @@ const BsNavLink = props => {
 			<a className="port-navbar-link"> {title} </a>
 		</Link>
 	);
+};
+
+const Login = () => {
+	return (
+		<span className="port-navbar-link clickable" onClick={auth0.login}>
+			Login
+		</span>
+	);
+};
+
+const Logout = () => {
+	return <span className="port-navbar-link clickable">Logout</span>;
 };
 
 const Example = props => {
@@ -52,6 +66,12 @@ const Example = props => {
 						</NavItem>
 						<NavItem className="port-navbar-item">
 							<BsNavLink route="/cv" title="Cv" />
+						</NavItem>
+						<NavItem className="port-navbar-item">
+							<Login />
+						</NavItem>
+						<NavItem className="port-navbar-item">
+							<Logout />
 						</NavItem>
 					</Nav>
 				</Collapse>
